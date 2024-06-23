@@ -22,11 +22,11 @@ export default buildConfig({
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {
     outputFile: path.resolve(dirname, "payload-types.ts"),
+    declare: false,
   },
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URI || "",
-      declare: false,
     },
   }),
 
