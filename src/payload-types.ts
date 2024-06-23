@@ -12,13 +12,13 @@ export interface Config {
     media: Media;
     work: Work;
     categoryWork: CategoryWork;
-    'payload-preferences': PayloadPreference;
-    'payload-migrations': PayloadMigration;
+    "payload-preferences": PayloadPreference;
+    "payload-migrations": PayloadMigration;
   };
   globals: {};
   locale: null;
   user: User & {
-    collection: 'users';
+    collection: "users";
   };
 }
 /**
@@ -99,7 +99,7 @@ export interface CategoryWork {
 export interface PayloadPreference {
   id: number;
   user: {
-    relationTo: 'users';
+    relationTo: "users";
     value: number | User;
   };
   key?: string | null;
@@ -125,9 +125,4 @@ export interface PayloadMigration {
   batch?: number | null;
   updatedAt: string;
   createdAt: string;
-}
-
-
-declare module 'payload' {
-  export interface GeneratedTypes extends Config {}
 }
