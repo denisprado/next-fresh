@@ -56,7 +56,7 @@ export default async function Home() {
 					return (
 						<div className="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 h-28" key={work.id}>
 							<Link href={work.slug}>
-								<Image src={src!} width={300} height={100} alt={work.title} className="rounded-3xl"></Image>
+								<img src={src!} width={300} height={100} alt={work.title} className="rounded-3xl"></img>
 							</Link>
 							<Link href={work.slug}>{work.title}</Link>
 						</div>
