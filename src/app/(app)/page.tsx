@@ -18,7 +18,7 @@ function getThumbSrc(work: WorkType) {
 	const gallery = work.gallery
 	console.log(gallery)
 	const image = gallery && gallery![0]?.image
-	const src = typeof image !== 'number' && image && image.url ? image.url : '/media/'
+	const src = typeof image !== 'number' && image && image.filename ? "/" + image.filename : '/media/'
 	return src
 }
 
@@ -56,7 +56,7 @@ export default async function Home() {
 					return (
 						<div className="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 h-28" key={work.id}>
 							<Link href={work.slug}>
-								<img src={src!} width={300} height={100} alt={work.title} className="rounded-3xl"></img>
+								<Image src={src!} width={300} height={100} alt={work.title} className="rounded-3xl"></Image>
 							</Link>
 							<Link href={work.slug}>{work.title}</Link>
 						</div>
